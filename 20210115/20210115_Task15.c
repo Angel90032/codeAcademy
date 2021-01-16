@@ -2,9 +2,9 @@
 #include <string.h>
 
 void test(){
-    static int g_someNumber = 1000;
-    g_someNumber++;
-    printf("%i\n",g_someNumber);
+    static int i_someNumber = 1000;
+    i_someNumber++;
+    printf("%i\n",i_someNumber);
 }
 
 int main(void){
