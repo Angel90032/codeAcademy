@@ -9,12 +9,12 @@ char text;
 
 int main(void){
     while((text = getchar())!= EOF){
-        counter++;    
-    }
-    printf("The counter vlaue is %d",counter);
-    if ( counter > 8){
+        counter++;
+        if (counter > 80){
         putchar(text);
+        }  
     }
+                  
 }
     
 
