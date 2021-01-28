@@ -120,7 +120,7 @@ double chooseRooms(char type[], double price, unsigned short int *number, unsign
     return price * *number * *nights;
 }
 
-double discountsAndBonuses(unsigned short int nights, double totalCostInLeva)
+double discountsAndBonuses(unsigned short int nights, double cost)
 {   
 
     double minBillSize = 700;
@@ -211,11 +211,11 @@ double discountsAndBonuses(unsigned short int nights, double totalCostInLeva)
 void finalOffer(){
     /* ------------ ФИНАЛНА ОФЕРТА ------------ */
     double one = 1; /* 1 = 100% of the current price*/
-    printf("Your discount percent is: %.2lf\n.",discountInPercents);
+    printf("Your discount percent is: %.2lf.\n",discountInPercents);
     totalCostInLevaAfterDiscount = totalCostInLeva * (one - discountInPercents) ;
     touristTax = totalCostInLevaAfterDiscount * TOURIST_TAX_RATE;
     totalCostInLevaPlusTax = totalCostInLevaAfterDiscount + touristTax;
-    printf("Your cost without a discount is: %.2lf\n",totalCostInLeva);
+    printf("Your cost without a discount is: %.2lf.\n",totalCostInLeva);
     if (discountInPercents){
         printf("Your cost with the discount is:%.2lf\n",totalCostInLevaAfterDiscount);
     }
