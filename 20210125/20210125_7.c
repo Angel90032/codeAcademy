@@ -4,17 +4,18 @@
 само входни редове, които са по дълги от 80 символа. */
 #include <stdio.h>
 
-int counter = 0;
+
 char text;
 
 int main(void){
+    int counter = 0;
     while((text = getchar())!= EOF){
-        counter++;    
+        counter++;  
     }
-    printf("The counter vlaue is %d",counter);
-    if ( counter > 8){
+    if (counter > 8){
         putchar(text);
-    }
+        }
+                  
 }
     
 
