@@ -20,7 +20,7 @@ int binarySearch(int a[], int Len, int x);
 int main(void){
     int myArr[] = {10,20,30,40,50,60,70,80,90,100,};
     int myL = 10;
-    int iWanted = 120;
+    int iWanted = 80;
     binarySearch(myArr,myL,iWanted);
     return 0;
 }
