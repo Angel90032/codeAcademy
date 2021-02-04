@@ -7,14 +7,20 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void printString (char someString[]);
 
 int main(){
     printf("Enter your string:\n");
-    /*char *myString;*/
-    char myString[100];
+    char *myString;
+    myString = (char*)malloc(25*sizeof(char));
+    myString = (char*)calloc(25,sizeof(char));
+    /*char myString[100];*/
     gets(myString);
+    printf("The size of my string is %i\n",sizeof(myString));
+    printf("My string is %s\n",myString);
+    
     printString(myString);
 
 
