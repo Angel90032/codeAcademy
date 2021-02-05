@@ -10,6 +10,8 @@ x), която получава като първи аргумент начал�
 Тогава връщаме номера на който се намира елемента в масива
 или 1 ако не се съдържа в масива. */
 
+/* Не работи правилно, но не успях да го направя*/
+
 #include <stdio.h>
 
 
@@ -18,18 +20,51 @@ int binarySearch(int a[], int Len, int x);
 int main(void){
     int myArr[] = {10,20,30,40,50,60,70,80,90,100,};
     int myL = 10;
+<<<<<<< HEAD
     int iWanted = 40;
+=======
+    int iWanted = 80;
+>>>>>>> f7f7260cb8a0becfb8293b3b2344cd166e0d3c12
     binarySearch(myArr,myL,iWanted);
     return 0;
 }
 /*start , len , wanted */
 int binarySearch(int a[], int Len, int x){
+<<<<<<< HEAD
     int counter = 0;
+=======
+>>>>>>> f7f7260cb8a0becfb8293b3b2344cd166e0d3c12
     int *p = a;
     int searchedIndex;
     static int startIndex = 0;
     int endIndex = Len -1;
     int midIndex = (startIndex + endIndex) / 2;
+<<<<<<< HEAD
+=======
+
+    
+    if (x == a[midIndex]){
+        
+        printf("The searched element %i is at position %i\n",a[midIndex],midIndex);
+        return 0;
+
+    }else if (x < a[midIndex]){
+        endIndex = midIndex -1;
+        return binarySearch(*p,endIndex,x);
+
+    }else if (x > a[midIndex]) {
+        p+= midIndex;
+        return binarySearch(*p,endIndex,x);
+    }
+    printf("The wanted element is not in the array.\n");                           
+    return -1; 
+
+           
+        
+    
+
+}
+>>>>>>> f7f7260cb8a0becfb8293b3b2344cd166e0d3c12
 
     
     if (x == a[midIndex]){
