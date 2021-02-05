@@ -2,12 +2,9 @@
 #include <string.h>
 
 int main () {
-   const char src[50] = "http://www.tutorialspoint.com";
-   char dest[50];
-   strcpy(dest,"Heloooo!!");
-   printf("Before memcpy dest = %s\n", dest);
-   memcpy(dest, src, strlen(src)+1);
-   printf("After memcpy dest = %s\n", dest);
-   
-   return(0);
+   int iArr[] = {10,20,30,40,50,60};
+   int *p = iArr;
+   printf("%i\n",*p);
+   p += 3;
+   printf("%i\n",*p);
 }

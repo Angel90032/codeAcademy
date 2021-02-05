@@ -18,8 +18,38 @@ int binarySearch(int a[], int Len, int x);
 int main(void){
     int myArr[] = {10,20,30,40,50,60,70,80,90,100,};
     int myL = 10;
-    int iWanted = 20;
+    int iWanted = 40;
     binarySearch(myArr,myL,iWanted);
     return 0;
 }
+/*start , len , wanted */
+int binarySearch(int a[], int Len, int x){
+    int counter = 0;
+    int *p = a;
+    int searchedIndex;
+    static int startIndex = 0;
+    int endIndex = Len -1;
+    int midIndex = (startIndex + endIndex) / 2;
 
+    
+    if (x == a[midIndex]){
+        int middle = (*p) + (endIndex - *p )/2;
+        printf("The searched element %i is at position %i\n",a[midIndex],middle);
+        return 0;
+
+    }else if (x < a[midIndex]){
+        endIndex = midIndex -1;
+        return binarySearch(p,endIndex,x);
+
+    }else if (x > a[midIndex]) {
+        p+= midIndex;
+        return binarySearch(p,endIndex,x);
+    }
+    printf("The wanted element is not in the array.\n");                           
+    return -1; 
+
+           
+        
+    
+
+}

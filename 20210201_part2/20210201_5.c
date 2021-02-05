@@ -11,5 +11,5 @@ int RecursiveFun(int nA, int nB) {
 return (nA + nB + nValue);
 }
 int main() {
-printf("RecursiveFun: %d\n", RecursiveFun(5, 7));
+printf("RecursiveFun: %d\n", RecursiveFun(2, 2));
 }
