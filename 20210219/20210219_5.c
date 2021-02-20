@@ -18,8 +18,8 @@ struct Point{
 void fillArr(char arr[ROWS][COLUMNS],char elToFillWith);
 void printArr(char arr[ROWS][COLUMNS]);
 void drawRectangle(struct Point p1,struct Point p2);
-/*extern struct Point point1;
-extern struct Point point2;*/
+struct Point createPoint(int x, int y);
+
 
 
 
@@ -91,8 +91,9 @@ void drawRectangle(struct Point p1,struct Point p2){
         for(start; start <= maxY; start++){
             arr[minX][start] = elToFillWith;
         }
-    }
-        
+    }  
+}
 
+struct Point createPoint(int x, int y){
     
 }
