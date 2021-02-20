@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-int arr1[8] = {10,20,30,40,50,60,70,80};
+int arr1[8] = {10,20,30,40,50,60,190,200};
 int arr2[8] = {5,15,55,75,99,101,105,500};
 int finalArr[16] = {0};
 
@@ -19,8 +19,8 @@ int main(void){
     int *p1Last = &(arr1[7]);
     int *p2Last = &(arr2[7]);
     int *pDestination = finalArr;
-
-    while ((p1 <= &(arr1[7])) || (p2 <= &(arr2[7]))){
+    int counter;
+    for ( counter = 0; counter < 16;counter++) {
         if (*p1 <= *p2 ){
             printf("Address of p1 %X, address of p2 %X, address of p1Last %X\n",p1,p2,p1Last);
             printf("Value of p1 %i value of p2 %i\n",*p1,*p2);
@@ -49,9 +49,6 @@ int main(void){
                 *p2 = 2147483646;
             }
        
-        }
-        if (((p1 == &(arr1[7])) && (p2 == &(arr2[7])))){
-            break;
         }
     }
     int index;
