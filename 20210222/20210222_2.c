@@ -17,7 +17,7 @@ struct tagMyValue{
     union tagMyVar m_var;
 };
 
-void printValue(struct tagMyValue * pValue){
+void printValue(struct tagMyValue *pValue){
     if (VALUE_INT == pValue-> m_type){
         printf("INT: %d\n",pValue->m_var.m_nValue);
     }else if (VALUE_STR == pValue->m_type){
