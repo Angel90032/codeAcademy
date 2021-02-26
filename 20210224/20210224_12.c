@@ -19,16 +19,13 @@ float float_max(float x, float y,float maxFloat);
 char char_max(char x, char y,char maxChar);
 
 
-#define GENERIC_MAX(type,x,y,max)\
+#define GENERIC_MAX(type,x,y,Mmax)\
 if (type == "int"){\
-    printf("Int found\n");\
-    int_max(x,y,max);\
+    Mmax = x > y ? x : y;\
 }else if (type == "float"){\
-    printf("F found\n");\
-    float_max(x,y,max);\
+    Mmax = x > y ? x : y;\
 }else if (type == "char"){\
-    printf("C found\n");\
-    char_max(x,y,max);\
+    Mmax = x > y ? x : y;\
 }
 
 int maxInt;
@@ -44,12 +41,12 @@ int main(void){
     float z = 500.50;
     float q = 400.50;
     
-    GENERIC_MAX("float",x,y,maxFloat);
+    GENERIC_MAX("float",z,q,maxFloat);
 
     char a = 'A';
     char b = 'B';
     
-    GENERIC_MAX("char",x,y,maxChar);
+    GENERIC_MAX("char",a,b,maxChar);
 
     printf("The max int is %i\n",maxInt);
     printf("The max float is %f\n",maxFloat);
