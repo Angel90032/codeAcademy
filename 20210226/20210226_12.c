@@ -14,7 +14,7 @@
 #include <string.h>
 #pragma pack(1)
 
-#define COUNT 3
+#define COUNT 10
 
  struct oldEmpl {
     int number;
@@ -35,7 +35,7 @@ void createEmployee(){
 
 int main(void){
     t_mEmployee A,B,C,D,E,F,G,H,I,K;
-    t_mEmployee eArr[] = {A,B,C};
+    t_mEmployee eArr[] = {A,B,C,D,E,F,G,H,I,K};
     
     
 
