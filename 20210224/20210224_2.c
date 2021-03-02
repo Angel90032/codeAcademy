@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-#define SWAP1(t,x,y) (t temp = x; x = y; y = temp;)
+#define SWAP1(t,x,y) { t temp = x; x = y; y = temp; }
 
 int main(void){
     int a,b;
