@@ -14,7 +14,6 @@ int pop(); void push()
 int top()
 int isFull(); int isEmpty(void) */
 
-
 struct node{
     int data;
     struct node *next;
@@ -22,26 +21,15 @@ struct node{
 
 struct node *temp;
 
-struct node *newNode(int size){
-    struct node *the_node = (struct node*)malloc(size);
-    the_node->data = -1;
-    the_node->next = NULL;
-    printf("%d\n", the_node->data);
-    return the_node;
-}
-
-void push();    // Function used to insert the element into the stack
-void pop();     // Function used to delete the elememt from the stack
-void display(); // Function used to display all the elements in the stack according to LIFO rule
+void push();
+int pop();
+void display();
 int top();
 int isFull();
 int isEmpty(void);
-//void destroy(stack *s);
 
 int main(){
     int choice;
-    newNode(100);
-
 
     do{
         printf("1. Push\n2. Pop\n3. Display\n4. Top\n5. isFull\n6. isEmpty\n7. Exit\n\n");
@@ -66,7 +54,7 @@ int main(){
             break;
         case 6:
         isEmpty();
-        break;     
+        break;
         case 7:
             exit(0);
             break;
@@ -75,12 +63,13 @@ int main(){
             break;
         }
     }while(choice != 7);
-    
+
     return 0;
 }
 
 void push(){
     int data;
+
     struct node *pointer = (struct node *)malloc(sizeof(struct node));
     if (NULL == pointer){
         printf("Stack overflow");
@@ -99,10 +88,14 @@ void push(){
     }
 }
 
-void pop(){
+int pop(){
     int item;
 
     struct node *pointer;
+
+    if(isEmpty()){
+        return 0;
+    }
     if(NULL == temp){
         printf("Stack Underflow\n");
     }else{
@@ -112,10 +105,10 @@ void pop(){
         free(pointer);
         printf("The deleted item is %d\n", item);
     }
+    return 0;
 }
-void display(){
-    int i;
 
+void display(){
     struct node *pointer;
     pointer = temp;
     if(NULL == pointer){
@@ -133,30 +126,39 @@ int top(){
     struct node *pointer;
     pointer = temp;
 
+    if(isEmpty()){
+        return 0;
+    }
     if(NULL == pointer){
         printf("Stack underflow\n");
     }else{
         printf("\nThe top element of the stack is:\n");
-        printf("\n%d\n", pointer->data);
+        printf("%d\n", pointer->data);
     }
     return 0;
 }
 
 int isFull(){
+    struct node *pointer;
+    pointer = temp;
 
+    if(&pointer->data == NULL && &pointer->next == NULL){
+        printf("The stack is full.\n");
+    }else{
+        printf("The stack is not full.\n");
+    }
+    return 0;
 }
 
 int isEmpty(void){
     struct node *pointer;
     pointer = temp;
-    //printf("%d\n", pointer->data);
-    
-    if(NULL == pointer){
-        printf("Stack underflow\n");
-    }else if(pointer->data == -1){
+
+    if(&pointer->data == NULL){
         printf("The stack is empty\n");
+        return 1;
     }else{
-        printf("the stack is not empt\n");
+        printf("The stack is not empty\n");
+        return 0;
     }
-    return -1;
 }
