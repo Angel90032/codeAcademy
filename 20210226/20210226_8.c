@@ -161,4 +161,8 @@ int isEmpty(void){
         printf("The stack is not empty\n");
         return 0;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ef89baabd9c036e0adfad01e1b35dddd47481bc9
