@@ -37,6 +37,7 @@ int main(void){
         
     }else{
         printf("Memory allocation for arr was successful.\n");
+        
     }
 
     enterRunners(runnersArr,count);

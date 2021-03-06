@@ -35,7 +35,7 @@ int TimeToSec(t_MyTime someTime);
 
 
 t_MyTime TPlusT(t_MyTime a, t_MyTime b);
-t_MyTime TMinusT(t_MyTime a, t_MyTime b);
+void TMinusT(t_MyTime a, t_MyTime b);
 
 int main(void){
     t_MyTime bgTime = {10,35,40};
@@ -116,7 +116,7 @@ t_MyTime TPlusT(t_MyTime a, t_MyTime b){
 }
 
 
-t_MyTime TMinusT(t_MyTime a, t_MyTime b){
+void TMinusT(t_MyTime a, t_MyTime b){
     int sToAdd = TimeToSec(a) - TimeToSec(b);
     SecToTime(sToAdd);
 }

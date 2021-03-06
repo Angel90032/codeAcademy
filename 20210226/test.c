@@ -106,7 +106,7 @@ int main(void){
         free(mName);    
         free(lName);
     }
-
+    /*the boss of empl x is x+1*/
     for (int x = 0; x < COUNT; x++){
         if (x == COUNT - 1){
             eArr[x].pToBoss = &eArr[0];
@@ -117,9 +117,9 @@ int main(void){
     
     }
     
-
+    /*printing result*/
     for (int i = 0; i < COUNT;i++){
-    printf("ID number is %i Fname is %s Mname is %s Lname is %s WE is %i Salary is %i BOSS is is %s\n",
+    printf("ID number is %i Fname is %s Mname is %s Lname is %s WE is %i Salary is %i THE BOSS  is %s\n",
     eArr[i].number,eArr[i].firstName,eArr[i].middleName,eArr[i].lastName,eArr[i].workExperience,eArr[i].salary,eArr[i].pToBoss->lastName);
     }
     return 0;

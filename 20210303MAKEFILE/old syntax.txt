@@ -1,0 +1,7 @@
+CC=gcc
+CFILE=main.c
+TARGET=main.exe
+all:
+	$(CC) $(CFILE) -o $(TARGET)
+clean:
+	del main.exe
