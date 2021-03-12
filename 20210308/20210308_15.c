@@ -9,6 +9,7 @@
 
 int main(void){
     int ft, i = 0;
+    int c;
     FILE *fp =fopen("FILE15.txt","w");
     if (NULL == fp){
         printf("Failed to open.");
@@ -21,8 +22,8 @@ int main(void){
     while(i<ft){
         i++;
         fseek(fp,-i,SEEK_END);
-        
-        printf("%c",fgetc(fp));
+        c = fgetc(fp);
+        printf("%c",c);
     }
     fclose(fp);
     

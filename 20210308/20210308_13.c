@@ -9,10 +9,15 @@
 #include <stdio.h>
 
 int main(void){
-    FILE *fptr = fopen("file13.txt","w");
+    FILE *fptr = fopen("file13.txt","r");
     int c;
     int newLineCount = 0;
-    fputs("Hello1\nHello2\n",fptr);
+
+    if (NULL == fptr){
+        printf("Error. File not opened.\n");
+        return 1;
+    }
+    
     while ((c = fgetc(fptr)) != EOF){
         if (c == '\n'){
             newLineCount += 1;
