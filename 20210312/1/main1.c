@@ -2,24 +2,18 @@
 изтрива елемент от списък по позиция в списъка. Използвайте следния
 елемент на динамичния списък:*/
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "1func.c"
 
-typedef struct t_node {
-int m_nValue;
-t_node* m_pNext;
-} t_node;
-
-t_node *start = NULL;
-
-int addEl(int n, int k);
+node_t *start;
 
 int main(void){
+    INIT();
+    add(5);
+    add(10);
+    addPrev(100,10);
+    printList();
     return 0;
 }
 
-int addEL(int n, int k){
-    t_node * q;
-    t_node *p = start;
-}
+
 
