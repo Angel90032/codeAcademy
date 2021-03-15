@@ -128,7 +128,7 @@ node_t* search_iter(int k){
 void printList(){
     node_t *ptr = start;
     while(ptr != NULL){
-        printf("%d",ptr->data);
+        printf("%d ",ptr->data);
         ptr = ptr->next;
     }
 }
