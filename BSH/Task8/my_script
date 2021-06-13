@@ -1,0 +1,59 @@
+#!/bin/bash
+
+exit_status(){
+	case $1 in
+		
+		0)
+			echo "All good"
+			;;
+		1)
+			echo "Did you enter 2 arguments?"
+			;;
+		2)
+			echo "Hmm did you enter zero by any chance?"
+			;;
+		3)
+			echo "Your prediction is wrong"
+			;;
+	esac					
+
+}
+gcc task8.c -o task8
+source test_info
+
+for test in "$test_info"
+do
+	./task8 $input1 $result1
+	returned=$?
+	exit_status $returned
+
+	./task8 $input2 $result2
+        returned=$?
+        exit_status $returned
+
+	./task8 $input3 $result3
+        returned=$?
+        exit_status $returned
+	
+	./task8 $input4 $result4
+        returned=$?
+        exit_status $returned
+
+        ./task8 $input5 $result5
+        returned=$?
+        exit_status $returned
+
+
+        ./task8 $input6 $result6
+        returned=$?
+        exit_status $returned
+
+        ./task8 $input7 $result7
+        returned=$?
+        exit_status $returned
+
+        ./task8 $input8 $result8
+        returned=$?
+        exit_status $returned
+
+done
