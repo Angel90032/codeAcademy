@@ -1,0 +1,43 @@
+#!/bin/bash
+
+check_status(){
+	
+	case $1 in
+	
+	0)
+		echo "All good"
+		;;
+	1)
+		echo "Did you enter 2 arguments?"
+		;;
+	2)
+		echo "Check your calculator"
+		;;
+	esac
+}
+
+gcc task13.c -o task13
+source test_info
+
+for test in "$test_info"
+do
+        ./task13 $input1 $result1
+        returned_value=$?
+        check_status $returned_value
+
+        ./task13 $input2 $result2
+        returned_value=$?
+        check_status $returned_value
+
+        ./task13 $input3 $result3
+        returned_value=$?
+        check_status $returned_value
+
+        ./task13 $input4 $result4
+        returned_value=$?
+	check_status $returned_value
+	
+	./task13 $input5 $result5
+	returned_value=$?
+	check_status $returned_value
+done

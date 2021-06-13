@@ -1,0 +1,10 @@
+input1="ABCdef"
+result1="abcdef"
+input2="WW245Q"
+result2="ww245q"
+input3="@#$%^&"
+result3="@#$%^&"
+input4=
+resul4=
+input5="ABCDE"
+result5="abcDe"
