@@ -1,0 +1,20 @@
+#1/bin/bash
+
+check_status(){
+
+	case $1 in
+
+	0)
+		echo "Great result"
+		;;
+	1)
+		echo "The result is not that great"
+		;;
+	esac
+}
+
+gcc task19.c -o ttt19
+
+./ttt19
+returned=$?
+check_status $returned
