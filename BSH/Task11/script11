@@ -1,0 +1,41 @@
+#1/bin/bash
+
+check_status(){
+
+
+	case $1 in
+	
+	0) 
+		echo "Everything is just fine"
+		;;
+	1)
+		echo "Wrong expected result"
+		;;
+	esac
+}
+
+gcc task11.c -o t11
+source test_data
+
+
+./t11 $x1 $y1 $result1
+returned_value=$?
+check_status $ returned_value
+
+
+./t11 $x2 $y2 $result2
+returned_value=$?
+check_status $ returned_value
+
+./t11 $x3 $y3 $result3
+returned_value=$?
+check_status $ returned_value
+
+./t11 $x4 $y4 $result4
+returned_value=$?
+check_status $ returned_value
+
+./t11 $x5 $y5 $result5
+returned_value=$?
+check_status $ returned_value
+
